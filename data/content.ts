@@ -74,10 +74,10 @@ const pt: Content = {
       {
         title: "Polyglot Persistence – Urban Transportation System",
         tags: ["PostgreSQL", "MongoDB", "Redis", "Neo4j", "Node.js", "React.js"],
-        description: "Sistema inteligente de transporte urbano com persistência poliglota, integrando uma BD relacional (PostgreSQL) com três soluções NoSQL (MongoDB, Redis e Neo4j) para suportar dados estruturados, flexíveis, em tempo real e relações complexas.",
-        objective: "Conceber e planear uma arquitetura modular (frontend React + API REST em Node.js) capaz de gerir e integrar dados de transporte público — linhas, paragens, itinerários, viagens, utilizadores — com foco em escalabilidade, desempenho e integração entre múltiplos paradigmas de persistência.",
-        problem: "Sistemas tradicionais e monolíticos baseados apenas em bases de dados relacionais têm limitações para lidar com grandes volumes de dados heterogéneos (geoespacial, preferências, histórico e dados em tempo real), exigindo uma abordagem mais flexível e escalável.",
-        value: "Atribui cada tipo de dado ao modelo mais adequado: PostgreSQL como 'source of truth' para dados críticos; MongoDB para dados flexíveis; Redis para cache e estado em tempo real; Neo4j para conectividade/rotas e shortest path.",
+        description: "Sistema de transporte inteligente que integra PostgreSQL, MongoDB, Redis e Neo4j para gerir dados complexos e heterogéneos.",
+        objective: "Criar arquitetura modular (React e Node.js) para transporte público, focada em escalabilidade, desempenho e persistência poliglota.",
+        problem: "Supera limitações de sistemas relacionais tradicionais, permitindo gerir grandes volumes de dados variados com flexibilidade necessária.",
+        value: "Otimiza o armazenamento usando a tecnologia ideal: PostgreSQL (críticos), MongoDB (flexíveis), Redis (cache) e Neo4j (rotas).",
         githubUrl: "https://github.com/joaogsfonseca"
       },
       {
@@ -200,10 +200,10 @@ const en: Content = {
       {
         title: "Polyglot Persistence – Urban Transportation System",
         tags: ["PostgreSQL", "MongoDB", "Redis", "Neo4j", "Node.js", "React.js"],
-        description: "Intelligent urban transportation system with polyglot persistence, integrating a relational DB (PostgreSQL) with three NoSQL solutions (MongoDB, Redis, Neo4j) to support structured, flexible, real-time data and complex relationships.",
-        objective: "Design and plan a modular architecture (React frontend + Node.js REST API) capable of managing and integrating public transport data — lines, stops, routes, trips, users — focusing on scalability, performance, and multi-paradigm persistence integration.",
-        problem: "Traditional monolithic systems based only on relational databases have limitations handling large volumes of heterogeneous data (geospatial, preferences, history, real-time), requiring a more flexible and scalable approach.",
-        value: "Assigns each data type to the most suitable model: PostgreSQL as 'source of truth' for critical data; MongoDB for flexible data; Redis for cache and real-time state; Neo4j for connectivity/routes and shortest path queries.",
+        description: "Intelligent transport system integrating PostgreSQL, MongoDB, Redis, and Neo4j to manage complex and heterogeneous data.",
+        objective: "Create a modular architecture (React and Node.js) for public transport, focused on scalability, performance, and polyglot persistence.",
+        problem: "Overcomes limitations of traditional relational systems, enabling management of large volumes of varied data with necessary flexibility.",
+        value: "Optimizes storage using ideal technology: PostgreSQL (critical), MongoDB (flexible), Redis (cache), and Neo4j (routes).",
         githubUrl: "https://github.com/joaogsfonseca"
       },
       {
