@@ -1,0 +1,199 @@
+/**
+ * index.css - Estilos Personalizados do Portfólio
+ * 
+ * Este ficheiro contém estilos CSS personalizados que complementam
+ * as classes utilitárias do TailwindCSS.
+ * 
+ * Secções:
+ * 1. Animações de Scroll - Efeitos de entrada para elementos
+ * 2. Efeitos 3D de Cartões - Hover com profundidade
+ * 3. Barra de Progresso - Indicador de scroll
+ * 4. Tema Claro - Overrides para modo light
+ * 5. Transições Globais - Suavização de mudanças de tema
+ */
+
+/* ============================================
+   ANIMAÇÕES DE SCROLL
+   Efeitos de fade-in e slide-up quando os 
+   elementos entram no viewport
+   ============================================ */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animações escalonadas para elementos filhos
+   Cada filho aparece com um pequeno atraso */
+.scroll-animate.visible>*:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.scroll-animate.visible>*:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate.visible>*:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* ============================================
+   EFEITOS 3D DE CARTÕES
+   Animação de elevação e rotação no hover
+   ============================================ */
+.card-3d {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25);
+}
+
+/* ============================================
+   BARRA DE PROGRESSO DE SCROLL
+   Barra fixa no topo que indica o progresso
+   de leitura da página
+   ============================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, #34d399, #60a5fa);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* ============================================
+   TEMA CLARO (LIGHT MODE)
+   Variáveis CSS e overrides para o modo claro
+   ============================================ */
+
+/* Variáveis de cor para o tema claro */
+.light-mode {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #e2e8f0;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #cbd5e1;
+}
+
+/* Aplicar cores de fundo no body */
+.light-mode body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Override de cores de fundo slate */
+.light-mode .bg-slate-950 {
+  background-color: var(--bg-primary) !important;
+}
+
+.light-mode .bg-slate-900 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.light-mode .bg-slate-900\/50 {
+  background-color: rgba(226, 232, 240, 0.5) !important;
+}
+
+.light-mode .bg-slate-900\/90 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+.light-mode .bg-slate-800 {
+  background-color: var(--bg-card) !important;
+}
+
+.light-mode .bg-slate-700 {
+  background-color: #e2e8f0 !important;
+}
+
+.light-mode .bg-slate-700\/50 {
+  background-color: rgba(226, 232, 240, 0.5) !important;
+}
+
+/* Gradiente de fundo para modo claro */
+.light-mode .bg-gradient-to-br {
+  background: linear-gradient(to bottom right, #ffffff, #f1f5f9) !important;
+}
+
+/* Override de cores de texto */
+.light-mode .text-white {
+  color: var(--text-primary) !important;
+}
+
+.light-mode .text-slate-200 {
+  color: var(--text-primary) !important;
+}
+
+.light-mode .text-slate-300 {
+  color: var(--text-secondary) !important;
+}
+
+.light-mode .text-slate-400 {
+  color: #64748b !important;
+}
+
+.light-mode .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.light-mode .text-slate-600 {
+  color: #64748b !important;
+}
+
+.light-mode .text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+.light-mode .text-gray-400 {
+  color: #64748b !important;
+}
+
+/* Override de cores de borda */
+.light-mode .border-slate-700 {
+  border-color: var(--border-color) !important;
+}
+
+.light-mode .border-slate-800 {
+  border-color: var(--border-color) !important;
+}
+
+.light-mode .border-slate-900 {
+  border-color: var(--border-color) !important;
+}
+
+/* Texto gradiente para modo claro (mais saturado) */
+.light-mode .gradient-text {
+  background: linear-gradient(to right, #059669, #2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Estados de hover para tema claro */
+.light-mode .hover\:bg-slate-700:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.light-mode .hover\:bg-slate-800:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* ============================================
+   TRANSIÇÕES GLOBAIS
+   Suaviza todas as mudanças de cor para
+   uma transição de tema mais fluida
+   ============================================ */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
