@@ -204,7 +204,7 @@ const App: React.FC = () => {
           </div>
 
           {/* Career Goals Block */}
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700">
+          <div className="bg-slate-900 rounded-2xl p-8 border border-slate-800 relative overflow-hidden">
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <Crosshair className="text-blue-400" /> {t.career.title}
             </h2>
