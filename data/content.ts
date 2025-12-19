@@ -29,10 +29,10 @@ const pt: Content = {
   skills: {
     title: "Competências Técnicas",
     categories: [
-      { category: "Linguagens", items: ["Python", "SQL", "Java", "TypeScript", "JavaScript", "C", "Dart"] },
+      { category: "Linguagens", items: ["Python", "SQL", "Java", "JavaScript", "C", "C++", "Dart"] },
       { category: "Engenharia de Dados", items: ["Técnicas de Mineração de Dados", "Fundamentos de Machine Learning", "Pré-processamento e limpeza de dados", "Avaliação e interpretação de modelos"] },
-      { category: "Bases de Dados", items: ["PostgreSQL", "MongoDB", "Redis", "Snowflake"] },
-      { category: "Ferramentas & Frameworks", items: ["Docker", "Git/GitHub Actions", "React & React Native", "Next.js", "Node.js", "Express.js", "Django", "Flutter"] }
+      { category: "Bases de Dados", items: ["PostgreSQL", "MongoDB", "Redis", "Neo4j"] },
+      { category: "Ferramentas & Frameworks", items: ["Git/GitHub", "Docker", "React & React Native", "Flutter", "Node.js", "Django", "Next.js", "Express.js"] }
     ]
   },
   projects: {
@@ -155,9 +155,9 @@ const en: Content = {
   skills: {
     title: "Technical Skills",
     categories: [
-      { category: "Languages", items: ["Python", "SQL", "Java", "TypeScript", "JavaScript", "C", "Dart"] },
+      { category: "Languages", items: ["Python", "SQL", "Java", "JavaScript", "C", "Dart"] },
       { category: "Data Engineering", items: ["Data Mining Techniques", "Machine Learning Fundamentals", "Data Preprocessing and Cleaning", "Model Evaluation and Interpretation"] },
-      { category: "Databases", items: ["PostgreSQL", "MongoDB", "Redis", "Snowflake"] },
+      { category: "Databases", items: ["PostgreSQL", "MongoDB", "Redis", "Neo4j"] },
       { category: "Tools & Frameworks", items: ["Docker", "Git/GitHub Actions", "React & React Native", "Next.js", "Node.js", "Express.js", "Django", "Flutter"] }
     ]
   },
