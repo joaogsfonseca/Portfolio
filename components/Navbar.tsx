@@ -7,24 +7,15 @@
  * - Menu responsivo para dispositivos móveis
  */
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Menu, X, Languages, Code2 } from 'lucide-react';
-import { Language } from '../types';
-
-/**
- * Props do componente Navbar
- * @property language - Idioma atualmente selecionado ('pt' ou 'en')
- * @property setLanguage - Função para alterar o idioma
- */
-interface NavbarProps {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-}
 
 /**
  * Componente de navegação principal
  * Inclui logo, links de navegação e seletor de idioma
  */
-const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
+const Navbar: React.FC = () => {
+  const { t, i18n } = useTranslation();
   // Estado para controlar se o menu móvel está aberto ou fechado
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,16 +23,17 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
    * Alterna entre os idiomas Português e Inglês
    */
   const toggleLang = () => {
-    setLanguage(language === 'pt' ? 'en' : 'pt');
+    const newLang = i18n.language === 'pt' ? 'en' : 'pt';
+    i18n.changeLanguage(newLang);
   };
 
-  // Definição dos links de navegação com tradução dinâmica
+  // Definição dos links de navegação com tradução via i18n
   const links = [
-    { href: "#about", label: language === 'pt' ? "Sobre" : "About" },
-    { href: "#skills", label: language === 'pt' ? "Skills" : "Skills" },
-    { href: "#projects", label: language === 'pt' ? "Projetos" : "Projects" },
-    { href: "#education", label: language === 'pt' ? "Formação" : "Education" },
-    { href: "#contact", label: language === 'pt' ? "Contacto" : "Contact" },
+    { href: "#about", label: t('nav.about') },
+    { href: "#skills", label: t('nav.skills') },
+    { href: "#projects", label: t('nav.projects') },
+    { href: "#education", label: t('nav.education') },
+    { href: "#contact", label: t('nav.contact') },
   ];
 
   return (
@@ -75,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
                 className="flex items-center gap-1 bg-slate-800 hover:bg-slate-700 text-emerald-400 px-3 py-2 rounded-md text-sm font-medium transition-colors border border-slate-700"
               >
                 <Languages className="h-4 w-4" />
-                {language.toUpperCase()}
+                {i18n.language.toUpperCase()}
               </button>
             </div>
           </div>
@@ -118,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ language, setLanguage }) => {
               className="w-full text-left flex items-center gap-2 text-emerald-400 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md text-base font-medium"
             >
               <Languages className="h-5 w-5" />
-              {language === 'pt' ? 'Mudar para Inglês' : 'Switch to Portuguese'}
+              {t('nav.switchLanguage')}
             </button>
           </div>
         </div>

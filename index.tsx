@@ -3,6 +3,7 @@
  * 
  * Este ficheiro é o ponto de entrada do React.
  * Responsável por:
+ * - Inicializar o sistema de internacionalização (i18n)
  * - Montar a aplicação no elemento DOM #root
  * - Envolver a aplicação com os providers necessários (ThemeProvider)
  * - Ativar React StrictMode para deteção de problemas
@@ -11,6 +12,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ThemeProvider } from './contexts/ThemeContext';
+import './i18n'; // Inicializar i18next
 
 // Obter o elemento DOM onde a aplicação será montada
 const rootElement = document.getElementById('root');

@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "skills": "Skills",
+    "projects": "Projetos",
+    "education": "Formação",
+    "contact": "Contacto",
+    "switchLanguage": "Mudar para Inglês"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou o João Fonseca",
+    "role": "Engenheiro Informático a acabar o mestrado.",
+    "description": "Estudante de Engenharia Informática no ISEP, especializado em Engenharia de dados.",
+    "ctaProject": "Ver Projetos",
+    "ctaContact": "Contactar"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "description": "Sou um apaixonado por tecnologia e por transformar ideias em soluções práticas. Considero-me uma pessoa proativa, organizada e com grande capacidade de aprendizagem. Gosto de trabalhar em equipa, partilhar ideias e enfrentar desafios que me obriguem a sair da zona de conforto.",
+    "academic": "Atualmente estou a frequentar o Mestrado em Engenharia Informática no Instituto Superior de Engenharia do Porto (ISEP), com foco em Engenharia de Dados.",
+    "mindset": "Acredito na aprendizagem contínua. Estou sempre à procura de novas tecnologias e soluções para resolver problemas de forma eficiente e otimizada."
+  },
+  "skills": {
+    "title": "Competências Técnicas",
+    "categories": [
+      { "category": "Linguagens", "items": ["Python", "SQL", "Java", "JavaScript", "C", "C++", "Dart"] },
+      { "category": "Engenharia de Dados", "items": ["Técnicas de Mineração de Dados", "Fundamentos de Machine Learning", "Pré-processamento e limpeza de dados", "Avaliação e interpretação de modelos"] },
+      { "category": "Bases de Dados", "items": ["PostgreSQL", "MongoDB", "Redis", "Neo4j"] },
+      { "category": "Ferramentas & Frameworks", "items": ["Git/GitHub", "Docker", "React & React Native", "Flutter", "Node.js", "Django", "Next.js", "Express.js"] }
+    ]
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Uma seleção de trabalhos académicos e pessoais que demonstram as minhas capacidades técnicas.",
+    "labels": {
+      "objective": "Objetivo",
+      "problem": "Problema Resolvido",
+      "value": "Valor Técnico"
+    },
+    "showMore": "Ver mais {{count}} projetos",
+    "showLess": "Ver menos",
+    "viewDemo": "Ver Demo",
+    "items": [
+      {
+        "title": "Previsão de Preços da Eletricidade com Modelos Estatísticos, Machine Learning e Deep Learning",
+        "tags": ["Python", "data mining", "machine learning", "deep learning", "crisp-dm"],
+        "description": "Projeto de previsão de preços da eletricidade usando dados temporais, meteorológicos e modelos preditivos avançados",
+        "objective": "Comparar modelos estatísticos, machine learning e deep learning para prever preços horários da eletricidade.",
+        "problem": "Reduz a incerteza associada à volatilidade dos preços da eletricidade em mercados energéticos liberalizados.",
+        "value": "Integra análise de séries temporais, modelos avançados e métricas robustas numa abordagem CRISP-DM estruturada.",
+        "githubUrl": "https://github.com/joaogsfonseca"
+      },
+      {
+        "title": "Análise e Aplicação de Técnicas de Aprendizagem Automática em Dados Musicais",
+        "tags": ["Python", "Machine Learning", "Regressão", "Classificação", "Feature Selection"],
+        "description": "Aplicação de métodos de aprendizagem automática a dados musicais para regressão, classificação e seleção de atributos.",
+        "objective": "Analisar, modelar e comparar algoritmos de machine learning aplicados a popularidade e classes musicais.",
+        "problem": "Predição de popularidade musical e classificação de faixas usando características áudio complexas e dados desbalanceados",
+        "value": "Integra regressão, classificação, validação cruzada e regularização, demonstrando boas práticas em machine learning aplicado.",
+        "githubUrl": "https://github.com/joaogsfonseca"
+      },
+      {
+        "title": "WALIT – Gestão de Subscrições e Despesas Partilhadas",
+        "tags": ["Flutter", "Node.js", "PostgreSQL", "Docker", "JWT"],
+        "description": "Aplicação mobile para gerir subscrições e despesas partilhadas, com notificações automáticas e visão financeira centralizada.",
+        "objective": "Ajudar utilizadores a controlar subscrições e despesas partilhadas de forma simples, centralizada e automática.",
+        "problem": "Falta de controlo, visibilidade e organização de subscrições e despesas recorrentes em ambientes partilhados.",
+        "value": "Implementa uma arquitetura backend segura e modular, com autenticação JWT, lógica financeira centralizada e escalabilidade preparada para evolução.",
+        "githubUrl": "https://github.com/joaogsfonseca"
+      },
+      {
+        "title": "Polyglot Persistence – Urban Transportation System",
+        "tags": ["PostgreSQL", "MongoDB", "Redis", "Neo4j", "Node.js", "React.js"],
+        "description": "Sistema de transporte inteligente que integra PostgreSQL, MongoDB, Redis e Neo4j para gerir dados complexos e heterogéneos.",
+        "objective": "Criar arquitetura modular (React e Node.js) para transporte público, focada em escalabilidade, desempenho e persistência poliglota.",
+        "problem": "Supera limitações de sistemas relacionais tradicionais, permitindo gerir grandes volumes de dados variados com flexibilidade necessária.",
+        "value": "Otimiza o armazenamento usando a tecnologia ideal: PostgreSQL (críticos), MongoDB (flexíveis), Redis (cache) e Neo4j (rotas).",
+        "githubUrl": "https://github.com/joaogsfonseca"
+      },
+      {
+        "title": "API REST para Gestão de Inventário",
+        "tags": ["Node.js", "Express", "MongoDB", "JWT", "Swagger"],
+        "description": "API RESTful completa para gestão de inventário com autenticação, documentação e testes.",
+        "objective": "Desenvolver uma API robusta e bem documentada seguindo boas práticas de desenvolvimento.",
+        "problem": "Necessidade de um backend escalável e seguro para aplicações de gestão de stock.",
+        "value": "Implementa padrões REST, autenticação JWT, documentação Swagger e testes automatizados.",
+        "githubUrl": "https://github.com/joaogsfonseca"
+      },
+      {
+        "title": "Dashboard de Análise de Vendas",
+        "tags": ["Python", "Dash", "Plotly", "Pandas", "SQL"],
+        "description": "Dashboard interativo para visualização e análise de dados de vendas em tempo real.",
+        "objective": "Criar visualizações interativas que permitem explorar métricas de negócio de forma intuitiva.",
+        "problem": "Dificuldade em extrair insights acionáveis de grandes volumes de dados de vendas.",
+        "value": "Combina ETL automatizado, visualizações interativas e KPIs em tempo real.",
+        "githubUrl": "https://github.com/joaogsfonseca"
+      }
+    ]
+  },
+  "education": {
+    "title": "Formação Académica",
+    "items": [
+      {
+        "degree": "Mestrado em Engenharia Informática",
+        "school": "ISEP - Instituto Superior de Engenharia do Porto",
+        "specialization": "Especialização em Engenharia de Dados",
+        "period": "2025 - Presente",
+        "description": "Formação avançada em sistemas distribuídos, big data e engenharia de dados, com foco em arquiteturas escaláveis e processamento de dados em larga escala."
+      },
+      {
+        "degree": "Licenciatura em Engenharia Informática",
+        "school": "ULP - Universidade Lusófona - Centro Universitário do Porto",
+        "period": "2021 - 2024",
+        "description": "Formação focada na análise de requisitos, desenho de arquiteturas e desenvolvimento de soluções informáticas, com forte componente prática e orientação para projetos reais."
+      }
+    ]
+  },
+  "career": {
+    "title": "Objetivos Profissionais",
+    "description": "Procuro uma oportunidade de estágio ou posição júnior nas áreas de Engenharia de Dados, Backend Development ou Full Stack Development, com o objetivo de integrar uma equipa técnica experiente onde possa aplicar os meus conhecimentos, evoluir tecnicamente e aprender através da colaboração e desafios reais."
+  },
+  "contact": {
+    "title": "Entre em contacto",
+    "text": "Estou disponível para oportunidades de estágio ou posição júnior, com foco em crescimento técnico e impacto real.",
+    "emailLabel": "Email",
+    "cvLabel": "Download CV",
+    "cvUrl": "/cv-pt.pdf",
+    "githubLabel": "GitHub",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "send": "Enviar Mensagem",
+      "sending": "A enviar...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Erro ao enviar. Tente novamente.",
+      "namePlaceholder": "O seu nome",
+      "emailPlaceholder": "seu.email@exemplo.com",
+      "messagePlaceholder": "Escreva a sua mensagem aqui..."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 João Fonseca."
+  }
+}

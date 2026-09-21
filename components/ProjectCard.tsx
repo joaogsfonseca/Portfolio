@@ -8,30 +8,39 @@
  * - Links para GitHub e Demo (quando disponíveis)
  */
 import React from 'react';
-import { Project } from '../types';
+import { useTranslation } from 'react-i18next';
 import { Database, Tag, Github, ExternalLink } from 'lucide-react';
 
 /**
  * Props do componente ProjectCard
  * @property project - Objeto com todos os dados do projeto
  * @property labels - Labels traduzidas para objetivo, problema e valor
- * @property language - Idioma atual para texto do botão de demo
  */
 interface ProjectCardProps {
-  project: Project;
+  project: {
+    title: string;
+    description: string;
+    tags: string[];
+    objective: string;
+    problem: string;
+    value: string;
+    githubUrl?: string;
+    demoUrl?: string;
+  };
   labels: {
     objective: string;
     problem: string;
     value: string;
   };
-  language: 'pt' | 'en';
 }
 
 /**
  * Cartão de projeto com animação 3D no hover
  * Apresenta informações detalhadas sobre cada projeto do portfólio
  */
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, labels, language }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, labels }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="card-3d bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-900/20 group flex flex-col">
       <div className="p-6 flex-1 flex flex-col">
@@ -98,7 +107,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, labels, language }) 
                 className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium rounded-lg transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
-                {language === 'pt' ? 'Ver Demo' : 'View Demo'}
+                {t('projects.viewDemo')}
               </a>
             )}
           </div>

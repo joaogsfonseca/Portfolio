@@ -5,59 +5,22 @@
  * Características:
  * - Validação de campos obrigatórios
  * - Feedback visual de estado (enviando, sucesso, erro)
- * - Suporte bilingue (Português/Inglês)
+ * - Suporte bilingue via react-i18next
  */
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
-
-/**
- * Props do componente
- * @property language - Idioma para as labels e mensagens
- */
-interface ContactFormProps {
-    language: 'pt' | 'en';
-}
 
 /**
  * Formulário de contacto com integração Formspree
  * Permite aos visitantes enviar mensagens diretamente pelo site
  */
-const ContactForm: React.FC<ContactFormProps> = ({ language }) => {
+const ContactForm: React.FC = () => {
+    const { t } = useTranslation();
     // Estado para armazenar os dados do formulário
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     // Estado para controlar o status de envio do formulário
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-
-    // Traduções das labels e mensagens do formulário
-    const labels = {
-        pt: {
-            name: 'Nome',
-            email: 'Email',
-            message: 'Mensagem',
-            send: 'Enviar Mensagem',
-            sending: 'A enviar...',
-            success: 'Mensagem enviada com sucesso!',
-            error: 'Erro ao enviar. Tente novamente.',
-            namePlaceholder: 'O seu nome',
-            emailPlaceholder: 'seu.email@exemplo.com',
-            messagePlaceholder: 'Escreva a sua mensagem aqui...'
-        },
-        en: {
-            name: 'Name',
-            email: 'Email',
-            message: 'Message',
-            send: 'Send Message',
-            sending: 'Sending...',
-            success: 'Message sent successfully!',
-            error: 'Error sending. Please try again.',
-            namePlaceholder: 'Your name',
-            emailPlaceholder: 'your.email@example.com',
-            messagePlaceholder: 'Write your message here...'
-        }
-    };
-
-    // Obter tradução atual com base no idioma selecionado
-    const t = labels[language];
 
     /**
      * Processa o envio do formulário
@@ -103,7 +66,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ language }) => {
                 <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                         <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2 text-left">
-                            {t.name}
+                            {t('contact.form.name')}
                         </label>
                         <input
                             type="text"
@@ -112,13 +75,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ language }) => {
                             required
                             value={formData.name}
                             onChange={handleChange}
-                            placeholder={t.namePlaceholder}
+                            placeholder={t('contact.form.namePlaceholder')}
                             className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
                         />
                     </div>
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2 text-left">
-                            {t.email}
+                            {t('contact.form.email')}
                         </label>
                         <input
                             type="email"
@@ -127,7 +90,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ language }) => {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            placeholder={t.emailPlaceholder}
+                            placeholder={t('contact.form.emailPlaceholder')}
                             className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
                         />
                     </div>
@@ -136,7 +99,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ language }) => {
                 {/* Campo de Mensagem */}
                 <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2 text-left">
-                        {t.message}
+                        {t('contact.form.message')}
                     </label>
                     <textarea
                         id="message"
@@ -145,7 +108,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ language }) => {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder={t.messagePlaceholder}
+                        placeholder={t('contact.form.messagePlaceholder')}
                         className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all resize-none"
                     />
                 </div>
@@ -154,7 +117,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ language }) => {
                 {status === 'success' && (
                     <div className="flex items-center gap-2 text-emerald-400 bg-emerald-900/30 p-4 rounded-lg">
                         <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                        <span>{t.success}</span>
+                        <span>{t('contact.form.success')}</span>
                     </div>
                 )}
 
@@ -162,7 +125,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ language }) => {
                 {status === 'error' && (
                     <div className="flex items-center gap-2 text-red-400 bg-red-900/30 p-4 rounded-lg">
                         <AlertCircle className="w-5 h-5 flex-shrink-0" />
-                        <span>{t.error}</span>
+                        <span>{t('contact.form.error')}</span>
                     </div>
                 )}
 
@@ -173,7 +136,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ language }) => {
                     className="w-full inline-flex items-center justify-center px-6 py-4 bg-emerald-500 hover:bg-emerald-600 disabled:bg-emerald-700 disabled:cursor-not-allowed text-slate-900 font-bold rounded-lg transition-all hover:shadow-lg hover:shadow-emerald-500/25"
                 >
                     <Send className="w-5 h-5 mr-2" />
-                    {status === 'sending' ? t.sending : t.send}
+                    {status === 'sending' ? t('contact.form.sending') : t('contact.form.send')}
                 </button>
             </div>
         </form>
